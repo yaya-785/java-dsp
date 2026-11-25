@@ -29,8 +29,13 @@ java-dsp/
 └── src/
     ├── main/java/com/dev/dsp/
     │   └── Complex.java
+    │   └── Signal.java 
+    │   └── Dft.java
     └── test/java/com/dev/dsp/
         └── ComplexTest.java
+        └── SignalTest.java
+        └── DftTest.java
+
 ```
  
 ## Getting started
