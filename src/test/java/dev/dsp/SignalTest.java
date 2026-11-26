@@ -51,7 +51,10 @@ public class SignalTest {
         assertArrayEquals(new double[]{0.0, 2.0, 0.0, -2.0}, signal.samples(), EPSILON);
         assertEquals(4, signal.length());
         assertEquals(4.0, signal.sampleRate(), EPSILON);
+
+        
     }
+
 
     @Test
     void sineWithZeroFrequencyIsAllZeros() {
@@ -127,9 +130,10 @@ public class SignalTest {
         Signal c = Signal.sine(6.0, 2.0, 32, 64.0);
         Signal differentRate = new Signal(a.samples(), 128.0);
 
+        assertEquals(a, a);
         assertEquals(a, b);
-        assertEquals(a.hashCode(), b.hashCode());
-        assertNotEquals(a, c);
+        assertEquals(a.hashCode(), b.hashCode()); 
+        assertNotEquals(a, c); 
         assertNotEquals(a, differentRate);
         assertNotEquals(a, null);
         assertNotEquals(a, "not a signal");
