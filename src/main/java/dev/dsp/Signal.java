@@ -30,6 +30,9 @@ public final class Signal {
         if (!Double.isFinite(sampleRate) || sampleRate <= 0.0) {
             throw new IllegalArgumentException("Sample rate must be positive and finite"); 
         }
+        if (!Double.isFinite(frequencyHz) || frequencyHz < 0.0 || frequencyHz > sampleRate / 2.0) {
+            throw new IllegalArgumentException("Frequency myst be in [0, sampleRate/2] to avoid aliasing"); 
+        }
         if (!Double.isFinite(amplitude)) {
             throw new IllegalArgumentException("Amplitude must be finite"); 
         }
